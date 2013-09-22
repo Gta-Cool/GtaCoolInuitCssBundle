@@ -1,0 +1,28 @@
+{
+    "name": "gta-cool/inuitcss-bundle",
+    "type": "symfony-bundle",
+    "description": "Integrates inuit.css framework in Symfony2",
+    "keywords": [
+        "SASS",
+        "BEM",
+        "OOCSS",
+        "framework"
+    ],
+    "homepage": "https://github.com/Gta-Cool/GtaCoolInuitCssBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jonathan Plugaru",
+            "email": "jplugaru@hotmail.fr",
+            "homepage": "https://github.com/Gta-Cool"
+        }
+    ],
+    "require": {
+        "symfony/framework-bundle": ">=2.0,<3.0-dev",
+        "components/inuit.css": "dev-feature/composer"
+    },
+    "autoload": {
+        "psr-0": { "GtaCool\\Bundle\\InuitCssBundle": "" }
+    },
+    "target-dir": "GtaCool/Bundle/InuitCssBundle"
+}
