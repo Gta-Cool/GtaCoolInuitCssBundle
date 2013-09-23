@@ -24,5 +24,10 @@
     "autoload": {
         "psr-0": { "GtaCool\\Bundle\\InuitCssBundle": "" }
     },
-    "target-dir": "GtaCool/Bundle/InuitCssBundle"
+    "target-dir": "GtaCool/Bundle/InuitCssBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "5.0.x-dev"
+        }
+    }
 }
