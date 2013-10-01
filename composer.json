@@ -19,6 +19,7 @@
     ],
     "require": {
         "symfony/framework-bundle": ">=2.0,<3.0-dev",
+        "symfony/assetic-bundle": "2.3.*",
         "components/inuit.css": "5.0.*"
     },
     "autoload": {
