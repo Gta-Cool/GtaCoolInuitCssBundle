@@ -52,7 +52,7 @@ Add the following lines inside your composer.json file ("web" must be the name o
 ```javascript
 {
     "require": {
-        "gta-cool/inuitcss-bundle": "5.0.*"
+        "gta-cool/inuitcss-bundle": "dev-master"
     },
     // ...
     "config": {
