@@ -24,27 +24,44 @@ class InuitCssGenerator extends Generator
     private $skeletonDir;
 
     /**
+     * @var string
+     */
+    private $resourcesInstallationDir;
+
+    /**
      * Constructor
      *
      * @param Filesystem $filesystem
      * @param string $skeletonDir
+     * @param string $resourcesInstallationDir
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(Filesystem $filesystem, $skeletonDir)
+    public function __construct(Filesystem $filesystem, $skeletonDir, $resourcesInstallationDir)
     {
         if (!is_string($skeletonDir)) {
             throw new \InvalidArgumentException("\"$skeletonDir\" must be a string");
         }
 
+        if (!is_string($resourcesInstallationDir)) {
+            throw new \InvalidArgumentException("\"$resourcesInstallationDir\" must be a string");
+        }
+
         $this->filesystem = $filesystem;
         $this->skeletonDir = $skeletonDir;
+        $this->resourcesInstallationDir = $resourcesInstallationDir;
     }
 
     public function generate(BundleInterface $bundle)
     {
         $dir = $bundle->getPath();
-        $this->filesystem->copy($this->skeletonDir.'/bundle/_vars.scss', $dir.'/Resources/public/css/_vars.scss');
-        $this->filesystem->copy($this->skeletonDir.'/bundle/style.scss', $dir.'/Resources/public/css/style.scss');
+        $this->filesystem->copy(
+            $this->skeletonDir.'/bundle/_vars.scss',
+            $dir.'/Resources'.$this->resourcesInstallationDir.'/_vars.scss'
+        );
+        $this->filesystem->copy(
+            $this->skeletonDir.'/bundle/style.scss',
+            $dir.'/Resources'.$this->resourcesInstallationDir.'/style.scss'
+        );
     }
 }

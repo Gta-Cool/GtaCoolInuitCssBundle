@@ -19,7 +19,7 @@ class AsseticSassFiltersCompilerPass implements CompilerPassInterface
         }
 
         // Construct inuit.css component root dir
-        $inuitCssComponentRootDir = $container->getParameter('kernel.root_dir').'/../';
+        $inuitCssComponentRootDir = $container->getParameter('kernel.root_dir').'/..';
         $inuitCssComponentRootDir .= $container->getParameter('inuit_css.component.root_dir');
         $inuitCssComponentRootDir = realpath($inuitCssComponentRootDir);
 

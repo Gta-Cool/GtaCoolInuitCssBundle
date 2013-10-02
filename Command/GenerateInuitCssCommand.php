@@ -56,7 +56,12 @@ EOT
         $dialog = $this->getDialogHelper();
 
         if ($input->isInteractive()) {
-            if (!$dialog->askConfirmation($output, $dialog->getQuestion('Do you confirm generation', 'yes', '?'), true)) {
+            if (!$dialog->askConfirmation(
+                        $output,
+                        $dialog->getQuestion('Do you confirm generation','yes', '?'),
+                        true
+                    )
+            ) {
                 $output->writeln('<error>Command aborted</error>');
 
                 return 1;
@@ -100,7 +105,12 @@ EOT
         ));
 
         while (true) {
-            $bundle = $dialog->askAndValidate($output, $dialog->getQuestion('Bundle name', $input->getOption('bundle')), array('Sensio\Bundle\GeneratorBundle\Command\Validators', 'validateBundleName'), false, $input->getOption('bundle'));
+            $bundle = $dialog->askAndValidate(
+                $output, $dialog->getQuestion('Bundle name', $input->getOption('bundle')),
+                array('Sensio\Bundle\GeneratorBundle\Command\Validators', 'validateBundleName'),
+                false,
+                $input->getOption('bundle')
+            );
 
             try {
                 $b = $this->getContainer()->get('kernel')->getBundle($bundle);
@@ -128,6 +138,10 @@ EOT
 
     protected function createGenerator()
     {
-        return new InuitCssGenerator($this->getContainer()->get('filesystem'), __DIR__.'/../Resources/skeleton');
+        return new InuitCssGenerator(
+            $this->getContainer()->get('filesystem'),
+            __DIR__.'/../Resources/skeleton',
+            $this->getContainer()->getParameter('inuit_css.bundle.resources_installation_dir')
+        );
     }
 }
