@@ -18,10 +18,10 @@ class GenerateBundleCommand extends BaseGenerateBundleCommand
     protected function configure()
     {
         parent::configure();
-        $this->setName('inuit.css:generate:bundle');
+        $this->setName('gta-cool:inuit.css:generate-bundle');
         $this->setDescription('Generates a bundle with inuit.css installed inside');
         $help = $this->getHelp();
-        $help = str_replace('generate:bundle', 'inuit.css:generate:bundle', $help);
+        $help = str_replace('generate:bundle', 'gta-cool:inuit.css:generate-bundle', $help);
         $help = str_replace('bundles', 'bundles with inuit.css installed inside', $help);
         $this->setHelp($help);
     }

@@ -32,22 +32,22 @@ class GenerateInuitCssCommand extends GeneratorCommand
             ))
             ->setDescription('Generates inuit.css files inside a bundle')
             ->setHelp(<<<EOT
-The <info>inuit.css:generate:existent-bundle</info> command helps you generates inuit.css files
+The <info>gta-cool:inuit.css:add-inside-bundle</info> command helps you generates inuit.css files
 inside bundles.
 
 By default, the command interacts with the developer to tweak the generation.
 Any passed option will be used as a default value for the interaction
 (<comment>--bundle</comment> is the only one needed if you follow the conventions):
 
-<info>php app/console inuit.css:generate:existent-bundle --bundle=AcmeBlogBundle</info>
+<info>php app/console gta-cool:inuit.css:add-inside-bundle --bundle=AcmeBlogBundle</info>
 
 If you want to disable any user interaction, use <comment>--no-interaction</comment>
 but don't forget to pass all needed options:
 
-<info>php app/console inuit.css:generate:existent-bundle --bundle=AcmeBlogBundle --no-interaction</info>
+<info>php app/console gta-cool:inuit.css:add-inside-bundle --bundle=AcmeBlogBundle --no-interaction</info>
 EOT
             )
-            ->setName('inuit.css:generate:existent-bundle')
+            ->setName('gta-cool:inuit.css:add-inside-bundle')
         ;
     }
 
