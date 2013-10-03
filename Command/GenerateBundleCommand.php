@@ -30,7 +30,6 @@ class GenerateBundleCommand extends BaseGenerateBundleCommand
     {
         return new BundleGenerator(
             $this->getContainer()->get('filesystem'),
-            __DIR__.'/../Resources/skeleton',
             $this->getContainer()->getParameter('inuit_css.bundle.resources_installation_dir')
         );
     }
